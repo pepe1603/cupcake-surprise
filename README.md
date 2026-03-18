@@ -1,75 +1,132 @@
-# Nuxt Minimal Starter
+# Cupcake Surprise 🧁
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Landing page "Dark Romance Neon" para sorpresa de cupcake con mensaje personalizado.
 
-## Setup
+## Preview
 
-Make sure to install dependencies:
+![Cupcake Surprise](screenShot-cupcake-surpriese-app.png)
+
+## Características
+
+- 🎨 Estilo Dark Romance Neon (fondo negro, néon pink/vino)
+- ✨ Animaciones GSAP + AOS
+- 📱 Diseño responsive
+- 💬 Botón WhatsApp para responder
+- 🔤 Fuentes: Knewave + Sour Gummy
+
+## Requisitos
+
+- Node.js 18+
+- pnpm (o npm/yarn)
+
+## Instalación
 
 ```bash
-# npm
-npm install
-
-# pnpm
+# Instalar dependencias
 pnpm install
 
-# yarn
-yarn install
-
-# bun
-bun install
+# Ejecutar en desarrollo
+pnpm run dev
 ```
 
-## Development Server
+## Configuración
 
-Start the development server on `http://localhost:3000`:
+### Mensaje personalizado
+
+Edita el mensaje en `app/app.vue`:
+
+```javascript
+const mensajeCompleto = 'Tu mensaje aquí...'
+```
+
+### Número de WhatsApp
+
+Edita el enlace en `app/app.vue` (footer):
+
+```html
+href="https://wa.me/?text=¡Me encantó la sorpresa!"
+```
+
+Cambia por tu número:
+```html
+href="https://wa.me/1234567890?text=Tu mensaje"
+```
+
+### Fecha
+
+Edita la fecha en `app/app.vue` (footer):
+```html
+17 de Marzo, 2026
+```
+
+### Colores
+
+Edita los colores en `app/assets/css/main.css`:
+
+```css
+:root {
+  --neon-pink: #ff69b4;
+  --neon-wine: #c71585;
+}
+```
+
+## Scripts
+
+| Comando | Descripción |
+|---------|-------------|
+| `pnpm dev` | Servidor de desarrollo |
+| `pnpm build` | Build para producción |
+| `pnpm generate` | Generar sitio estático |
+| `pnpm preview` | Previsualizar build |
+
+## Estructura
+
+```
+cupcake-surprise/
+├── app/
+│   ├── app.vue           # Componente principal
+│   └── assets/css/
+│       └── main.css      # Estilos personalizados
+├── nuxt.config.ts        # Configuración Nuxt
+├── tailwind.config.ts    # Configuración Tailwind
+└── package.json
+```
+
+## Deploy
+
+### Vercel (Recomendado)
 
 ```bash
-# npm
-npm run dev
+# Instalar Vercel CLI
+pnpm add -g vercel
 
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
+# Deploy
+vercel
 ```
 
-## Production
+O conecta el repositorio en [vercel.com](https://vercel.com)
 
-Build the application for production:
+### Netlify
 
-```bash
-# npm
-npm run build
+1. Conecta el repositorio en [netlify.com](https://netlify.com)
+2. Build command: `pnpm generate`
+3. Publish directory: `dist`
 
-# pnpm
-pnpm build
+## Generar QR Code
 
-# yarn
-yarn build
+Una vez deployado, genera el QR en:
+- https://qr-code-generator.com
+- https://goqr.me
 
-# bun
-bun run build
-```
+Apunta a la URL del proyecto deployado.
 
-Locally preview production build:
+## Tecnologías
 
-```bash
-# npm
-npm run preview
+- [Nuxt 4](https://nuxt.com) - Framework Vue
+- [TailwindCSS](https://tailwindcss.com) - Estilos
+- [GSAP](https://greensock.com/gsap/) - Animaciones
+- [AOS](https://michalsnik.github.io/aos/) - Animaciones scroll
 
-# pnpm
-pnpm preview
+## Licencia
 
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+Privado - Solo para uso personal

@@ -2,8 +2,10 @@
 import { ref, onMounted } from 'vue'
 import gsap from 'gsap'
 
+
 const mensaje = ref('')
-const mensajeCompleto = 'A veces las palabras sobran, pero los detalles no. 🧁\n\nQuería que supieras lo mucho que valoro tenerte cerca y lo especial que eres para mí.\n\n¡Disfrútalo mucho! ❤️'
+const nombreChica = 'Jasmin' // Aquí pones su nombre
+const mensajeCompleto = `A veces las palabras sobran, pero los detalles no. 🧁\n\nQuería que supieras lo mucho que valoro tenerte cerca y lo especial que eres para mí.\n\n¡Disfrútalo mucho! ❤️`
 const mostrarCursor = ref(true)
 const cartaVisible = ref(false)
 const hearts = ref<Array<{id: number; left: string; top: string; delay: number; size: number; duration: number}>>([])
@@ -132,7 +134,7 @@ const typewriterEffect = () => {
             <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
           </svg>
           <h2 class="text-3xl md:text-4xl text-pink-400 neon-text" style="font-family: 'Knewave', cursive;">
-            Para Ti
+            Para Ti {{ nombreChica }}
           </h2>
         </div>
         
